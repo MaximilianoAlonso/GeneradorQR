@@ -6,18 +6,19 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>VERIFICAR</h1>
+   
     <h2>Estado del QR: <br> 
       
       <b class="estado"><%= estado %></b>  </h2>
-    
+      <h2>Valido para:<br> 
+        <b class="validoPara"><%= descripcion %></b>  </h2>
       <ul>
         <li><b>Id:</b><br> <%= id %> </li>
         <li><b>Nombre:</b><br> <%= nombre %> </li>
         <li><b>Apellido:</b><br> <%= apellido %> </li>
         <li><b>Email:</b><br> <%= email %> </li>
         <li><b>Telefono:</b><br> <%= telefono %> </li>
-        <li><b>Descripción:</b><br> <%= descripcion %> </li>
+        
     </ul>
     <form method="post">
         <input type="hidden" name="id" value="<%= id %>"  hidden>
@@ -28,6 +29,8 @@
         <input type="hidden" name="descripcion" value="<%= descripcion %>" hidden>
         <input type="text" name="estado" id="estado" value="CADUCADO" hidden>
         <button class="botonCaducar" type="submit">Caducar QR</button> 
-    </form>
-</body>
+
+      </form>
+      
+    </body>
 </html>

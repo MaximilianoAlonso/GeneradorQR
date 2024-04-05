@@ -33,17 +33,19 @@ padding: 20px;
 .botonCaducar{
   background-color: rgb(196, 61, 28);
   border:none;
+  font-size: 22px;
+  color: white;
 padding: 20px;
   margin: 20px auto;
   width: 70%;
   border-radius: 10px;
 }
 ul{
-  padding: 20px;
+  padding: 10px;
 }
 li{
   list-style: none;
-  padding: 10px;
+  padding:5px;
   font-size: 22px;
 }
 
@@ -52,5 +54,16 @@ li{
   padding: 20px;
   width: 80%;
   margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(191, 135, 243);
+}
+
+.validoPara{
+  display: block;
+  padding: 20px;
+  width: 80%;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-transform: uppercase;
   background-color: rgb(191, 135, 243);
 }
