@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
     const { nombre, apellido, telefono, email, descripcion, estado } = req.body;
     const id = Date.now().toString();
 
-    const data = `http://localhost:3000/verificado/${id}`;
+    const data = `https://generadorqr-clubx.onrender.com/verificado/${id}`;
 
     const options = {
         errorCorrectionLevel: 'H',
