@@ -15,8 +15,7 @@ const id = generarUUIDNumerico();
 
 module.exports = {
   crearQr: (req, res) => {
-    const ultima = IdQr;
-    console.log(IdQr);
+   
     res.render("generarQr", {
       id,
     });
