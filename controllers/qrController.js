@@ -36,7 +36,7 @@ module.exports = {
       },
     };
 
-    qr.toFile(`images/qr/qr${id}.png`, data, options, function (err) {
+    qr.toFile(`public/images/qr/qr${id}.png`, data, options, function (err) {
       if (err) {
         console.error("Error al generar el QR:", err);
         res.status(500).send("Error interno al generar el QR.");
@@ -77,7 +77,7 @@ module.exports = {
             }
             console.log("Datos guardados correctamente.");
 
-            res.download(`images/qr/qr${id}.png`, `qr${id}.png`, function (err) {
+            res.download(`public/images/qr/qr${id}.png`, `qr${id}.png`, function (err) {
               if (err) {
                 console.error("Error al descargar el QR:", err);
                 res.status(500).send("Error interno al descargar el QR.");
