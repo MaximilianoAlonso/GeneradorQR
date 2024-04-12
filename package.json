@@ -13,6 +13,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "qrcode": "^1.5.3",
-    "sweetalert2": "^11.10.7"
+    "sweetalert2": "^11.10.7",
+    "uuid": "^9.0.1"
   }
 }

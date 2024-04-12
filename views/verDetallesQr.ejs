@@ -1,0 +1,98 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>Verificar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+
+<div class="cabeceraContainer">   
+  <% if (estado == "CADUCADO") { %>
+  <b class="estado" style="background-color: #C43D1C;">
+    EL QR A <%= estado %> 
+      </b>
+  <% }else{ %>
+  <b class="estado" style="background-color: #2EC02E;">
+  EL QR ESTA <%= estado %>
+  </b>
+  <% } %>
+  <% if (estado == "CADUCADO") { %>
+    <b class="validoPara" style="text-decoration: line-through;">
+      VALE POR:  <%= descripcion %>
+      </b>
+      
+  <% }else{ %>
+    <b class="validoPara">
+      VALE POR:  <%= descripcion %>
+    </b>
+      
+  <% } %>
+</div>    
+    </h2>
+    <% if (estado == "CADUCADO") { %>
+      <form method="post">
+        <input type="hidden" name="id" value="<%= id %>" hidden>
+        <input type="hidden" name="nombre" value="<%= nombre %>" hidden>
+        <input type="hidden" name="apellido" value="<%= apellido %>" hidden>
+        <input type="hidden" name="email" value="<%= email %>" hidden>
+        <input type="hidden" name="telefono" value="<%= telefono %>" hidden>
+        <input type="hidden" name="descripcion" value="<%= descripcion %>" hidden>
+        <input type="text" name="estado" id="estado" value="ACTIVO" hidden>
+        <button class="botonCaducar" style="background-color: #2EC02E;" type="submit">Activar QR</button>
+      </form> 
+      <% } else {%>
+        <form method="post">
+          <input type="hidden" name="id" value="<%= id %>" hidden>
+          <input type="hidden" name="nombre" value="<%= nombre %>" hidden>
+          <input type="hidden" name="apellido" value="<%= apellido %>" hidden>
+          <input type="hidden" name="email" value="<%= email %>" hidden>
+          <input type="hidden" name="telefono" value="<%= telefono %>" hidden>
+          <input type="hidden" name="descripcion" value="<%= descripcion %>" hidden>
+          <input type="text" name="estado" id="estado" value="CADUCADO" hidden>
+          <button class="botonCaducar" type="submit">Caducar QR</button>
+          <a class="botonCrear" href="generarQr">CREAR OTRO QR</a>
+        </form> 
+    <% } %>
+
+
+    <p id="enviarWhatsapp" onclick="enviarWhatsapp('<%= telefono %>', 'http://localhost:3000/images/qr/qr<%= id %>.png')">ENVIAR QR</p>
+
+    <img src="/images/qr/qr1712879458495.png" alt="asdasdasd">
+    
+      </a>
+      <ul>
+        <li><b>Id:</b><br>
+          <%= id %>
+        </li>
+        <li><b>Nombre:</b><br>
+          <%= nombre %>
+        </li>
+        <li><b>Apellido:</b><br>
+          <%= apellido %>
+        </li>
+        <li><b>Email:</b><br>
+          <%= email %>
+        </li>
+        <li><b>Telefono:</b><br>
+          <%= telefono %>
+        </li>
+    </ul>
+
+
+    <!--  -->
+
+  </body>
+  <script>
+    const enviarWhatsapp = (numeroWhatsapp, mensaje) => {
+  document.getElementById('enviarWhatsapp').addEventListener('click', function() {
+      // Aquí deberías especificar el número de WhatsApp al que deseas enviar la imagen
+      ; // Mensaje que se enviará junto con la imagen (opcional)
+      var url = "https://wa.me/" + numeroWhatsapp + "?text=" + mensaje;
+      window.open(url, '_blank');
+  });
+  }
+  </script>
+  </html>

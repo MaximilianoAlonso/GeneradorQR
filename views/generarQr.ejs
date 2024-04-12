@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generar QR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <h2>Crear código QR</h2>
+  <form id="myForm" method="post">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+    <input type="text" name="telefono" id="telefono" placeholder="Teléfono">
+    <input type="email" name="email" id="email" placeholder="Email">
+    <input type="text" name="descripcion" id="descripcion" placeholder="Descripción" required>
+    <input type="text" name="estado" id="estado" value="ACTIVO" readonly hidden>
+    <button id="botonGuardar" class="botonCrear" type="submit">Guardar y Descargar</button>
+  </form>
+</body>
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+   // Prevenir el envío del formulario por defecto
+
+  // Recargar la página
+  location.reload();
+
+  // Redireccionar a otra página después de un corto retraso (por si la recarga es instantánea)
+  setTimeout(function() {
+    window.location.href = "/verDetallesQr/<%= id %>";
+  }, 500); // 500 milisegundos de retraso (ajusta según sea necesario)
+});
+</script>
+</html>
