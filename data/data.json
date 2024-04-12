@@ -1,3 +1,11 @@
 [
-  
+  {
+    "id": "e5837969-2842-4fd0-9d8c-d165151a6f92",
+    "nombre": "Maximiliano",
+    "apellido": "Alonso",
+    "telefono": "1159143248",
+    "email": "elgrungemaxi1986@gmail.com",
+    "descripcion": "ENTRADA",
+    "estado": "ACTIVO"
+  }
 ]

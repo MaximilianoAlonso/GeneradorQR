@@ -34,7 +34,7 @@ module.exports = {
       },
     };
 
-    qr.toFile(`./public/images/qr/qr${id}.png`, data, options, function (err) {
+    qr.toFile(`./qr${id}.png`, data, options, function (err) {
       if (err) {
         console.error("Error al generar el QR:", err);
         res.status(500).send("Error interno al generar el QR.");
