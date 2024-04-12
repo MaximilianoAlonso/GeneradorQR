@@ -2,25 +2,28 @@ const qr = require("qrcode");
 const fs = require("fs");
 
 // Importar el módulo uuid
-const { v4: uuidv4 } = require('uuid');
+function generarUUIDNumerico() {
+  let uuid = "";
+  for (let i = 0; i < 12; i++) {
+    uuid += Math.floor(Math.random() * 10); // Genera un número aleatorio entre 0 y 9
+  }
+  return uuid;
+}
 
 // Generar un UUID
-const IdQr = uuidv4();
-id=IdQr
+const id = generarUUIDNumerico();
+
 module.exports = {
   crearQr: (req, res) => {
-   
-       const ultima = IdQr
-        console.log(IdQr)
-          res.render("generarQr", { 
-           id, ultima
-        
-        
-      });
+    const ultima = IdQr;
+    console.log(IdQr);
+    res.render("generarQr", {
+      id,
+    });
   },
   generarQr: (req, res) => {
     const { nombre, apellido, telefono, email, descripcion, estado } = req.body;
-  
+
     const data = `https://generadorqr-clubx.onrender.com/VerDetallesQr/${id}`;
 
     const options = {
@@ -148,7 +151,7 @@ module.exports = {
               return;
             }
             console.log("Datos modificados correctamente.");
-            res.redirect("/verDetallesQr/"+id);
+            res.redirect("/verDetallesQr/" + id);
           }
         );
       } else {

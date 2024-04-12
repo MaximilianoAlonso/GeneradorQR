@@ -53,14 +53,14 @@
           <input type="hidden" name="descripcion" value="<%= descripcion %>" hidden>
           <input type="text" name="estado" id="estado" value="CADUCADO" hidden>
           <button class="botonCaducar" type="submit">Caducar QR</button>
-          <a class="botonCrear" href="generarQr">CREAR OTRO QR</a>
+          <a class="botonCrear" href="/generarQr">CREAR OTRO QR</a>
         </form> 
     <% } %>
 
 
-    <p id="enviarWhatsapp" onclick="enviarWhatsapp('<%= telefono %>', 'https://generadorqr-clubx.onrender.com/images/qr/qr<%= id %>.png')">ENVIAR QR</p>
+    <p id="enviarWhatsapp" onclick="enviarWhatsapp('<%= telefono %>', 'https://generadorqr-clubx.onrender.com/qr<%= id %>.png')">ENVIAR QR</p>
 
-    <img src="/images/qr/qr<%=  %>.png" alt="asdasdasd">
+    <img src="./qr<%= id %>.png" alt="...">
     
       </a>
       <ul>
