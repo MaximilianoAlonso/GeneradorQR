@@ -20,15 +20,15 @@
 </body>
 <script>
   document.getElementById('myForm').addEventListener('submit', function(event) {
-   // Prevenir el envío del formulario por defecto
-
-  // Recargar la página
-  location.reload();
-
-  // Redireccionar a otra página después de un corto retraso (por si la recarga es instantánea)
+   
   setTimeout(function() {
+      location.reload();
+   }, 5000);
+
+  setTimeout(function() {
+
     window.location.href = "https://generadorqr-clubx.onrender.com/verDetallesQr/<%= id %>";
-  }, 5000); // 500 milisegundos de retraso (ajusta según sea necesario)
+  }, 5000); 
 });
 </script>
 </html>
